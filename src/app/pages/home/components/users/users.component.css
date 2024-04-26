@@ -1,0 +1,16 @@
+.btn-no-border {
+  border: none;
+  background-color: transparent; 
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40vh;
+}
+
+.warn {
+  text-align: center;
+  color: rgb(0, 101, 76);
+}

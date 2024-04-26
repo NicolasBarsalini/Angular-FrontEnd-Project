@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="form">
+        <h2 class="text-uppercase text-center mb-5"><b>Edit</b> an user</h2>
+        <form [formGroup]="editUserForm">
+            <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example1cg">Nome</label>
+                <input type="text" formControlName="name" class="form-control form-control-lg">
+
+                <!-- ERROR -->
+                <div
+                    *ngIf="editUserForm.get('name')?.invalid && (editUserForm.get('name')?.dirty || editUserForm.get('name')?.touched)">
+                    <div class="text-danger">Nome é obrigatório</div>
+                </div>
+                <!-- ERROR -->
+
+            </div>
+
+            <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example3cg">Email</label>
+                <input type="text" formControlName="email" class="form-control form-control-lg">
+
+                <!-- ERROR -->
+                <div
+                    *ngIf="editUserForm.get('email')?.invalid && (editUserForm.get('email')?.dirty || editUserForm.get('email')?.touched)">
+                    <div class="text-danger">Por favor insira um e-mail válido</div>
+                </div>
+                <!-- ERROR -->
+            </div>
+
+            <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example3cg">Função</label>
+                <select formControlName="function" class="form-control form-control-lg">
+                    <option *ngFor="let func of functions" [value]="func">{{ func }}</option>
+                </select>
+
+                <!-- ERROR -->
+                <div
+                    *ngIf="editUserForm.get('function')?.invalid && (editUserForm.get('function')?.dirty || editUserForm.get('function')?.touched)">
+                    <div class="text-danger">Por favor insira uma função válida</div>
+                </div>
+                <!-- ERROR -->
+            </div>
+
+            <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example4cg">Senha</label>
+                <input type="password" formControlName="password" class="form-control form-control-lg">
+
+                <!-- ERROR -->
+                <div
+                    *ngIf="editUserForm.get('password')?.invalid && (editUserForm.get('password')?.dirty || editUserForm.get('password')?.touched)">
+                    <div class="text-danger">Por favor insira uma senha entre 6 e 15 caracteres</div>
+                </div>
+                <!-- ERROR -->
+            </div>
+
+            <div class="d-flex justify-content-center">
+                <button (click)="onSubmit()" [disabled]="!editUserForm.valid" type="button" class="btn btn-warning">Salvar</button>
+            </div>
+
+        </form>
+    </div>
+</div>
