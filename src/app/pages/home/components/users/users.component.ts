@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css']
 })
+
 export class UsersComponent {
   users: User[] = [];
   functions = [
@@ -47,9 +48,13 @@ export class UsersComponent {
     this.router.navigate(['/app/edit-user'])
   }
 
+  addUser() {
+    this.router.navigate(['/app/add-user'])
+  }
+
 }
 
-class User {
+export class User {
   name?: string;
   email?: string;
   function?: string;

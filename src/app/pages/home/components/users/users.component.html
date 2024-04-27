@@ -1,38 +1,45 @@
 <div class="container">
-<div class="container-fluid">
-  <h1 class="warn">Welcome to users page</h1>
-  <ng-container *ngIf="users.length > 0; else noUsers">
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th scope="col">Nome</th>
-          <th scope="col">E-mail</th>
-          <th scope="col">Função</th>
-          <th scope="col">Editar</th>
-          <th scope="col">Remover</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let user of users">
-          <th scope="row">{{ user.name }}</th>
-          <td>{{ user.email }}</td>
-          <td>{{ user.function }}</td>
-          <td>
-            <button class="btn-no-border" (click)="edit()">
-              <i class="bi bi-pencil"></i>
-            </button>
-          </td>
-          <td>
-            <button class="btn-no-border" (click)="removed(user)">
-              <i class="bi bi-x"></i>
-            </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </ng-container>
-  <ng-template #noUsers>
-    <h3 class="warn">Sem nenhum usuário cadastrado!</h3>
-  </ng-template>
-</div>
+  <div class="container-fluid">
+    <h1 class="warn">Welcome to users page</h1>
+    <ng-container *ngIf="users.length > 0; else noUsers">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Nome</th>
+              <th scope="col">E-mail</th>
+              <th scope="col">Função</th>
+              <th scope="col">Editar</th>
+              <th scope="col">Remover</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of users">
+              <th scope="row">{{ user.name }}</th>
+              <td>{{ user.email }}</td>
+              <td>{{ user.function }}</td>
+              <td>
+                <button class="btn-no-border" (click)="edit()">
+                  <i class="bi bi-pencil"></i>
+                </button>
+              </td>
+              <td>
+                <button class="btn-no-border" (click)="removed(user)">
+                  <i class="bi bi-x"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </ng-container>
+    <ng-template #noUsers>
+      <h3 class="warn">Sem nenhum usuário cadastrado!</h3>
+    </ng-template>
+
+    <div class="d-flex justify-content-center">
+      <button (click)="addUser()" type="button" class="btn btn-success">NEW</button>
+    </div>
+
+  </div>
 </div>

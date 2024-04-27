@@ -28,7 +28,7 @@ export class EditUserComponent{
       this.editUserForm = new FormGroup({
         name: new FormControl(this.user.name || '', Validators.required),
         email: new FormControl(this.user.email || '', [Validators.required, Validators.email]),
-        function: new FormControl(this.user.function || '', [Validators.required]),
+        function: new FormControl(this.user.function || ''),
         password: new FormControl(this.user.password || '', [Validators.required, Validators.minLength(6), Validators.maxLength(15)])
       });
     }

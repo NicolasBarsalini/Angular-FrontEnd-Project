@@ -13,4 +13,9 @@
 .warn {
   text-align: center;
   color: rgb(0, 101, 76);
+  padding-top: 30px;
+}
+
+.table-responsive {
+  margin: 60px;
 }
